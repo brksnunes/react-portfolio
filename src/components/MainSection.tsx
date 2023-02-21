@@ -1,22 +1,18 @@
 /* eslint-disable react/no-unescaped-entities */
 import {
   Flex,
-  Link,
   Text,
-  Button,
   SimpleGrid,
   Heading,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
 } from '@chakra-ui/react';
 import { githubFetch } from '../api/githubFetch';
 import { useQuery } from 'react-query';
-
+import ProjectCard from './ProjectCard';
 
 function MainSection() {
-  const { data } = useQuery('github_data', githubFetch);
+  const { isLoading, data } = useQuery('github_data', githubFetch);
+  
+  if (isLoading) return "Loading...";
   return (
     <Flex direction='column'>
       <Heading as='h2' size='md'>
@@ -41,24 +37,9 @@ function MainSection() {
         PROJECTS
       </Heading>
       <SimpleGrid spacing={4} minChildWidth='320px'>
-        <Card>
-          <CardHeader>
-            <Heading size='sm'>site-fazenda</Heading>
-          </CardHeader>
-          <CardBody>
-            <Text>
-            Site da Fazenda São José da Esperança
-            </Text>
-          </CardBody>
-          <CardFooter>
-          <Link href='https://fazendasjesperanca.netlify.app/' isExternal>
-              <Button>Live</Button>
-            </Link>
-            <Link href='https://github.com/brksnunes/site-fazenda' isExternal>
-              <Button>Code</Button>
-            </Link>
-          </CardFooter>
-        </Card>
+        { data.edges.map((item) => (
+          <ProjectCard key={item.node.name} data={item} />
+        ))}
       </SimpleGrid>
     </Flex>
   );
