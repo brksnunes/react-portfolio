@@ -27,8 +27,8 @@ export const githubFetch = async () => {
       }`
      })
     });
-    const json = await response.json();
-    return json;
+    const { data: { user: { pinnedItems } }} = await response.json();
+    return pinnedItems;
   } catch (error) {
     console.log(error);
   }
