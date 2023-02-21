@@ -57,7 +57,9 @@ function Sidebar() {
         FRONTEND
       </Text>
       <Flex wrap='wrap' gap={'8px'} mt='2' justify={'center'}>
-        <Badge fontSize='0.9rem' bg='#f12' color='white'>HTML</Badge>
+        <Badge fontSize='0.9rem' bg='#f12' color='white'>
+          HTML
+        </Badge>
         <Badge fontSize='0.9rem'>CSS</Badge>
         <Badge fontSize='0.9rem'>REACT</Badge>
         <Badge fontSize='0.9rem'>REDUX</Badge>
