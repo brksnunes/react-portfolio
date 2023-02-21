@@ -1,18 +1,13 @@
 /* eslint-disable react/no-unescaped-entities */
-import {
-  Flex,
-  Text,
-  SimpleGrid,
-  Heading,
-} from '@chakra-ui/react';
+import { Flex, Text, SimpleGrid, Heading, Spinner, Stack, Skeleton } from '@chakra-ui/react';
 import { githubFetch } from '../api/githubFetch';
 import { useQuery } from 'react-query';
 import ProjectCard from './ProjectCard';
 
 function MainSection() {
   const { isLoading, data } = useQuery('github_data', githubFetch);
-  
-  if (isLoading) return "Loading...";
+  console.log('🚀 ~ file: MainSection.tsx:14 ~ MainSection ~ data:', data);
+
   return (
     <Flex direction='column'>
       <Heading as='h2' size='md'>
@@ -37,9 +32,18 @@ function MainSection() {
         PROJECTS
       </Heading>
       <SimpleGrid spacing={4} minChildWidth='320px'>
-        { data.edges.map((item) => (
-          <ProjectCard key={item.node.name} data={item} />
-        ))}
+        {isLoading ? (
+          <Stack>
+          <Skeleton height='100px' />
+          <Skeleton height='90px' />
+          <Skeleton height='80px' />
+          <Skeleton height='70px' />
+          <Skeleton height='60px' />
+          <Skeleton height='50px' />
+        </Stack>
+        ) : (
+          data!.map((item) => <ProjectCard key={item.name} {...item} />)
+        )}
       </SimpleGrid>
     </Flex>
   );
