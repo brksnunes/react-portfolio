@@ -2,14 +2,14 @@ import { Flex, Image, Text, IconButton, Button, Divider, Badge, SimpleGrid} from
 import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
 function Sidebar() {
   return (
-    <Flex direction='column'>
+    <Flex direction='column' p={5}>
       <Image
         borderRadius='full'
         boxSize='100%'
         w='160px'
         alignSelf='center'
-        src='https://bit.ly/dan-abramov'
-        alt='Dan Abramov'
+        src='https://avatars.githubusercontent.com/u/18584397?u=9700f359efed1a5299b21c28ae0f9e4e2c6046a6&v=4'
+        alt='Very Handsome man'
       />
       <Text as='b' fontSize='lg' align='center' mt='2'>Rodrigo Nunes da Silva</Text>
       <Text  fontSize='sm' align='center' mt='1'>Full Stack Web Developer</Text>
