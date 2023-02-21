@@ -1,4 +1,4 @@
-import { Image, Flex, Text, Box } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 import Sidebar from './components/Sidebar';
 import MainSection from './components/MainSection';
 import './styles/main.css';
