@@ -13,19 +13,23 @@ import { Node } from '../interfaces/IGithubReturn';
 
 function ProjectCard({ name, description, homepageUrl, url }: Node) {
   return (
-    <Card bg='blackAlpha.500' color='white'>
+    <Card bg='whiteAlpha.300' color='white' size='sm' p='10px'>
       <CardHeader>
         <Heading size='sm'>{name}</Heading>
       </CardHeader>
       <CardBody>
         <Text>{description}</Text>
       </CardBody>
-      <CardFooter>
+      <CardFooter justify='center' gap='5' color='gray.700'>
         <Link href={homepageUrl ? homepageUrl : url} isExternal>
-          <Button>Live</Button>
+          <Button size='sm' colorScheme='whatsapp'>
+            Live
+          </Button>
         </Link>
         <Link href={url} isExternal>
-          <Button>Code</Button>
+          <Button size='sm' colorScheme='whatsapp'>
+            Code
+          </Button>
         </Link>
       </CardFooter>
     </Card>
