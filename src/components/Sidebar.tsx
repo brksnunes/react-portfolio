@@ -6,8 +6,9 @@ import {
   Button,
   Divider,
   Badge,
+  Link,
 } from '@chakra-ui/react';
-import { FiGithub, FiLinkedin, FiMail } from 'react-icons/fi';
+import { BsGithub, BsLinkedin, BsFillEnvelopeFill } from 'react-icons/bs';
 import { frontend, backend, devops } from '../utils/constants';
 function Sidebar() {
   return (
@@ -27,31 +28,40 @@ function Sidebar() {
         Full Stack Web Developer
       </Text>
       <Flex justify={'center'} gap='3' mt='2' w='100%'>
-        <IconButton
-          variant='outline'
-          colorScheme='white'
-          aria-label='Send email'
-          isRound
-          icon={<FiGithub />}
-        />
-        <IconButton
-          variant='outline'
-          colorScheme='white'
-          aria-label='Send email'
-          isRound
-          icon={<FiLinkedin />}
-        />
-        <IconButton
-          variant='outline'
-          colorScheme='white'
-          aria-label='Send email'
-          isRound
-          icon={<FiMail />}
-        />
+        <Link href='https://github.com/brksnunes' isExternal>
+          <IconButton
+            colorScheme='blackAlpha'
+            aria-label='Github'
+            isRound
+            icon={<BsGithub />}
+          />
+        </Link>
+        <Link
+          href='https://www.linkedin.com/in/rodrigo-nunes-da-silva/'
+          isExternal
+        >
+          <IconButton
+            colorScheme='linkedin'
+            aria-label='Linkedin'
+            isRound
+            icon={<BsLinkedin />}
+          />
+        </Link>
+        <Link href='mailto:brksnunes@protonmail.com' isExternal>
+          <IconButton
+            colorScheme='orange'
+            aria-label='Email'
+            isRound
+            icon={<BsFillEnvelopeFill />}
+          />
+        </Link>
       </Flex>
-      <Button colorScheme='white' variant='outline' mt='5' w='100%'>
-        Get my CV
-      </Button>
+
+      <Link href='../assets/rodrigo-nunes-cv.pdf' download>
+        <Button colorScheme='green' mt='5' w='100%'>
+          Get my CV
+        </Button>
+      </Link>
       <Divider mt='4' />
 
       <Text fontSize='sm' align='left' mt='7'>
@@ -59,7 +69,12 @@ function Sidebar() {
       </Text>
       <Flex wrap='wrap' gap={'8px'} mt='2' justify={'center'}>
         {frontend.map((item) => (
-          <Badge key={item.name} bg={item.bg} color={item.color} fontSize='0.9rem'>
+          <Badge
+            key={item.name}
+            bg={item.bg}
+            color={item.color}
+            fontSize='0.9rem'
+          >
             {item.name}
           </Badge>
         ))}
@@ -69,8 +84,13 @@ function Sidebar() {
         BACKEND
       </Text>
       <Flex wrap='wrap' gap={'8px'} mt='2' justify={'center'}>
-      {backend.map((item) => (
-          <Badge key={item.name} bg={item.bg} color={item.color} fontSize='0.9rem'>
+        {backend.map((item) => (
+          <Badge
+            key={item.name}
+            bg={item.bg}
+            color={item.color}
+            fontSize='0.9rem'
+          >
             {item.name}
           </Badge>
         ))}
@@ -80,8 +100,13 @@ function Sidebar() {
         DEVOPS
       </Text>
       <Flex wrap='wrap' gap={'8px'} mt='2' justify={'center'}>
-      {devops.map((item) => (
-          <Badge key={item.name} bg={item.bg} color={item.color} fontSize='0.9rem'>
+        {devops.map((item) => (
+          <Badge
+            key={item.name}
+            bg={item.bg}
+            color={item.color}
+            fontSize='0.9rem'
+          >
             {item.name}
           </Badge>
         ))}
