@@ -28,10 +28,10 @@ function MainSection() {
         projects, collaborate whenever i can, learn new stuff and have fun while
         doing it!
       </Text>
-      <Heading as='h2' size='md' mt='2rem' mb='1rem'>
+      <Heading as='h2' size='md' mt='3rem' mb='1rem'>
         PROJECTS
       </Heading>
-      <SimpleGrid spacing={4} minChildWidth='320px'>
+      <SimpleGrid spacing={4} minChildWidth={['50%', '50%', '25%']}>
         {isLoading ? (
           <Stack>
           <Skeleton height='100px' />
