@@ -31,8 +31,7 @@ export const githubFetch = async () => {
     });
     const data: IGithubReturn = await response.json();
     const prettyData = dataFormatter(data);
-    console.log("🚀 ~ file: githubFetch.ts:33 ~ githubFetch ~ prettyData:", prettyData)
-    return prettyData
+    return prettyData;
   } catch (error) {
     console.log(error);
   }

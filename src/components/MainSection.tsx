@@ -6,7 +6,6 @@ import ProjectCard from './ProjectCard';
 
 function MainSection() {
   const { isLoading, data } = useQuery('github_data', githubFetch);
-  console.log('🚀 ~ file: MainSection.tsx:14 ~ MainSection ~ data:', data);
 
   return (
     <Flex direction='column'>
