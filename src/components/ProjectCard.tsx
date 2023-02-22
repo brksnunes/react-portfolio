@@ -22,12 +22,12 @@ function ProjectCard({ name, description, homepageUrl, url }: Node) {
       </CardBody>
       <CardFooter justify='center' gap='5' color='gray.700'>
         <Link href={homepageUrl ? homepageUrl : url} isExternal>
-          <Button size='sm' colorScheme='whatsapp'>
+          <Button size='sm' colorScheme='green'>
             Live
           </Button>
         </Link>
         <Link href={url} isExternal>
-          <Button size='sm' colorScheme='whatsapp'>
+          <Button size='sm' colorScheme='green'>
             Code
           </Button>
         </Link>
