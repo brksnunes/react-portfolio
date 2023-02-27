@@ -57,7 +57,7 @@ function Sidebar() {
         </Link>
       </Flex>
 
-      <Link href='../assets/rodrigo-nunes-cv.pdf' download>
+      <Link href='/rodrigo-nunes-cv.pdf' download>
         <Button colorScheme='green' mt='5' w='100%'>
           Get my CV
         </Button>
